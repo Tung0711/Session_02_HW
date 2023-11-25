@@ -12,13 +12,13 @@ public class B1_Hw {
         System.out.println("Nhap vao gia tri cuoi cung:");
         last = sc.nextInt();
 
-        /*//tinh tong cac so chan vua nhap
+        //tinh tong cac so chan vua nhap
         for (int i = first; i <= last; i++) {
             if (i % 2 == 0) {
                 total += i;
             }
         }
         System.out.println("Tong cua cac so chan tu "+first+
-                " den "+last+" la "+total);*/
+                " den "+last+" la "+total);
     }
 }
