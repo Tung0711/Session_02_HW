@@ -39,14 +39,56 @@ public class B6_Hw {
     }
 
     public static void kiemTraChanLe() {
+        int number;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số nguyên n:");
+        number = scanner.nextInt();
 
+        //kiểm tra số nhập vào là số chẵn hay số lẻ
+        if (number % 2 == 0) {
+            System.out.printf("%d là số chẵn \n", number);
+        } else {
+            System.out.printf("%d là số lẻ \n", number);
+        }
     }
 
     public static void kiemTraSoNT() {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        System.out.println("Nhập vào số nguyên n:");
+        n = scanner.nextInt();
 
+        //kiểm tra n có p số nt ko
+        if (soNT(n)) {
+            System.out.println(n + " là số nguyên tố! \n");
+        } else {
+            System.out.println(n + " không phải là số nguyên tố! \n");
+        }
     }
 
     public static void kiemTraChiaHet3() {
+        int number;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập vào số nguyên n:");
+        number = scanner.nextInt();
 
+        // kiểm tra số nhập vào có chia hết cho 3 ko
+        if (number % 3 == 0) {
+            System.out.printf("%d là số chia hết cho 3 \n", number);
+        } else {
+            System.out.printf("%d là số không chia hết cho 3 \n", number);
+        }
+    }
+
+    public static boolean soNT(int n) {
+        if (n < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
