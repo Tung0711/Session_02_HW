@@ -58,8 +58,21 @@ public class B6_Hw {
         System.out.println("Nhập vào số nguyên n:");
         n = scanner.nextInt();
 
+        boolean soNT = true;
+
+        if (n < 2) {
+            soNT = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    soNT = false;
+                    break;
+                }
+            }
+        }
+
         //kiểm tra n có p số nt ko
-        if (soNT(n)) {
+        if (soNT) {
             System.out.println(n + " là số nguyên tố! \n");
         } else {
             System.out.println(n + " không phải là số nguyên tố! \n");
@@ -78,17 +91,5 @@ public class B6_Hw {
         } else {
             System.out.printf("%d là số không chia hết cho 3 \n", number);
         }
-    }
-
-    public static boolean soNT(int n) {
-        if (n < 2) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
 }
